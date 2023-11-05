@@ -17,6 +17,8 @@ services:
       DB_NAME: testdb
       DB_PORT: 5432
       ALLOWED_ORIGINS: '*'
+    networks:
+      - mynetwork  
   # Redis Service   
   postgres:
     image: "postgres:alpine"
@@ -28,6 +30,8 @@ services:
       POSTGRES_PASSWORD: pratik1234
       POSTGRES_USER: pratik
       POSTGRES_DB: testdb
+    networks:
+      - mynetwork  
 
   frontend:
     build:
@@ -41,3 +45,8 @@ services:
       REACT_APP_SERVER_URL: http://localhost:8080/employees
     depends_on:
       - backend
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
