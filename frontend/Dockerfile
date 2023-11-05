@@ -2,7 +2,7 @@ FROM node:14
 
 WORKDIR /app
 
-COPY ./frontend/package*.json .docker
+COPY ./frontend/package.json /app/
 
 COPY ./frontend .
 

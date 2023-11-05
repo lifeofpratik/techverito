@@ -11,7 +11,7 @@ sudo apt-get upgrade -y
 if ! command -v docker &> /dev/null; then
   curl -fsSL https://get.docker.com -o get-docker.sh
   sudo sh get-docker.sh
-  sudo usermod -aG docker azureuser
+  sudo usermod -aG docker devopsuser
   sudo rm get-docker.sh
 fi
 
