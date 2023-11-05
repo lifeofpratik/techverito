@@ -1,3 +1,12 @@
+terraform {
+  backend "azurerm" {
+    subscription_id      = "46d88689-2150-4100-aa13-d503ed0078fd"
+    resource_group_name  = "terraform-rg"
+    storage_account_name = "tfsatest"
+    container_name       = "tfstate"
+    key                  = "test.tfstate"
+  }
+}
 
 terraform {
   required_providers {
