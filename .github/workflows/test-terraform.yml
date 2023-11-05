@@ -6,17 +6,17 @@ on:
     branches:
       - main
     paths:
-      - 'terraform/**'
+      - 'terraform-code/**'
   pull_request:
     paths:
-      - 'terraform/**'
+      - 'terraform-code/**'
 
 env:
   ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
   ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
   ARM_SUBCRIPTION_ID: ${{ secrets.ARM_SUBCRIPTION_ID }}
   ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
-  TF_WORKING_DIR: './terraform'
+  TF_WORKING_DIR: './terraform-code'
 
 jobs:
   terraform:
