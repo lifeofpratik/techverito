@@ -1,6 +1,7 @@
 name: Terraform Azure Deploy
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
@@ -39,7 +40,3 @@ jobs:
     - name: Terraform Apply
       if: ${{ github.ref == 'refs/heads/main'}}
       run: terraform -chdir=${{ env.TF_WORKING_DIR }} apply -input=false tfplan
-      # You may add -auto-approve to apply without prompting for confirmation
-
-    - name: Terraform Show Outputs
-      run: terraform output
